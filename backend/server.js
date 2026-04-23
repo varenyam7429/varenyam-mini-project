@@ -130,6 +130,11 @@ app.delete('/api/shopping', (req, res) => {
 });
 
 // ─── Ingredient Lib ──────────────────────────────────────────────────────────
+app.get('/api/ingredients', (req, res) => {
+  const data = getData();
+  res.json(data.ingredients || []);
+});
+
 const axios = require('axios');
 
 // ─── AI Routes ──────────────────────────────────────────────────────────────

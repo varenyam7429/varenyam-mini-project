@@ -4,9 +4,6 @@ import Toast from './components/Toast';
 import Dashboard from './pages/Dashboard';
 import Fridge from './pages/Fridge';
 import RecipeBox from './pages/RecipeBox';
-import ShoppingList from './pages/ShoppingList';
-import ImportRecipe from './pages/ImportRecipe';
-import MatchEngine from './pages/MatchEngine';
 import { AppProvider } from './context/AppContext';
 
 function App() {
@@ -17,9 +14,6 @@ function App() {
       case 'dashboard': return <Dashboard />;
       case 'fridge': return <Fridge />;
       case 'recipes': return <RecipeBox />;
-      case 'shopping': return <ShoppingList />;
-      case 'import': return <ImportRecipe />;
-      case 'algorithm': return <MatchEngine />;
       default: return <Dashboard />;
     }
   };
