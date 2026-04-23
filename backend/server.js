@@ -9,6 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Serve static files from the Vite build
+app.use(express.static(path.join(__dirname, '../dist')));
+
 const DB_PATH = path.join(__dirname, 'db.json');
 
 // Initial data
@@ -188,4 +191,8 @@ app.post('/api/ai/generate', async (req, res) => {
 });
 
 const PORT = 5000;
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
+
 app.listen(PORT, '0.0.0.0', () => console.log(`Backend running on http://0.0.0.0:${PORT} (File DB)`));
